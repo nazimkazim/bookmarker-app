@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body onload="getBookmarks()">
+    <div class="container">
+        <form id="form">
+          <label for="site_name">Choose a name</label>
+          <input
+            name="site_name"
+            type="text"
+            id="site_name"
+            placeholder="site name"
+          />
+          <label for="site_url">Choose a url</label>
+          <input
+            name="site_url"
+            type="text"
+            id="site_url"
+            placeholder="site url"
+          />
+          <label for="resource_type">Choose a type</label>
+          <select name="resource_type" id="resource_type">
+            <!-- <option value="sport">Sport</option>
+            <option value="news">News</option>
+            <option value="psychology">Psychology</option>
+            <option value="entertainment">entertainment</option>
+            <option value="it">IT</option> -->
+          </select>
+          <button class="submit">submit</button>
+        </form>
+      <div id="filter__strip"></div>
+      <div class="output"></div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
