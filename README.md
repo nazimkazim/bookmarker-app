@@ -1,2 +1,10 @@
 # bookmarker-app
-## in this app the following concepts are covered
+- for loop
+- document.getElementById
+- document.querySelector
+- array
+- innerHTML
+- building Markup dynamically
+- JSON.stringify
+- JSON.parse
+- onclick event
