@@ -8,3 +8,4 @@
 - JSON.stringify
 - JSON.parse
 - onclick event
+- adding and removing classes
