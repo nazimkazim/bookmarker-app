@@ -14,19 +14,24 @@ const types = [
   { selectName: "IT", value: "it" },
 ];
 
-function getType(type) {
-  return type;
-}
+
 
 function filterByType(type) {
-  getType(type);
+  const buttons = document.querySelectorAll('.button')
+  for (let i = 0; i < buttons.length; i++) {
+    if (buttons[i].dataset.id === type) {
+      buttons[i].classList.add('highlight')
+    } else {
+      buttons[i].classList.remove('highlight')
+    }
+  }
   getBookmarks(type);
 }
 
 for (let i = 0; i < types.length; i++) {
   resourceType.innerHTML += `<option value=${types[i].value}>${types[i].selectName}</option>`;
   filterStrip.innerHTML += `
-  <button onclick="filterByType('${types[i].value}')" data-type href="#">${types[i].selectName}</button>`;
+  <button class="button" data-id=${types[i].value} onclick="filterByType('${types[i].value}')" href="#">${types[i].selectName}</button>`;
 }
 
 const uid = () =>
@@ -115,7 +120,6 @@ function getBookmarks(type = "all") {
       ? bookmarksFromStorage
       : bookmarksFromStorage.filter((bookmark) => bookmark.type === type);
   let bookmarkOutput = document.querySelector(".output");
-  console.log(bookmarks);
   bookmarkOutput.innerHTML = "";
   for (let i = 0; i < bookmarks.length; i++) {
     let { name, url, type, id } = bookmarks[i];
